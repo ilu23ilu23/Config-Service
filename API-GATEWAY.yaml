@@ -1,0 +1,39 @@
+spring:
+  application:
+    name: API-GATEWAY
+
+server:
+  port: 8080
+
+spring:
+  cloud:
+    gateway:
+      routes:
+        - id: identity
+          uri: lb://AUTH-SERVICE
+          predicates:
+            - Path=/identity/**
+          filters:
+            - name: JwtAuth
+              args:
+                skip: /identity/.*
+        - id: movies
+          uri: lb://MOVIES-SERVICE
+          predicates:
+            - Path=/movies/**
+          filters:
+            - JwtAuth
+        - id: bookings
+          uri: lb://BOOKINGS-SERVICE
+          predicates:
+            - Path=/bookings/**
+          filters:
+            - JwtAuth
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka/
+
+auth:
+  url: http://localhost:8000

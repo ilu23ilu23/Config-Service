@@ -1,0 +1,24 @@
+spring:
+  application:
+    name: AUTH-SERVICE
+  datasource:
+    driver-class-name: org.postgresql.Driver
+    url: jdbc:postgresql://localhost:5436/idb
+    username: user
+    password: password
+  jpa:
+    hibernate:
+      ddl-auto: none
+
+jwt:
+  ttl: 900000
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka/
+      register-with-eureka: true
+      fetch-registry: true
+
+server:
+  port: 8000

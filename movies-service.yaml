@@ -7,10 +7,10 @@ spring:
         jwt:
           issuer-uri: http://localhost:8080/realms/ilu-realm
   datasource:
-    driver-class-name: org.h2.Driver
-    url: jdbc:h2:mem:moviesdb;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=false
-    username: sa
-    password:
+    driver-class-name: org.postgresql.Driver
+    url: jdbc:postgresql://localhost:5437/db
+    username: user
+    password: password
   jpa:
     hibernate:
       ddl-auto: none

@@ -69,3 +69,8 @@ management:
   health:
     circuitbreakers:
       enabled: true
+
+logging:
+  level:
+    org.springframework.boot.autoconfigure.web: DEBUG
+    org.springframework.security.access: DEBUG 

@@ -28,7 +28,6 @@ spring:
   kafka:
     bootstrap-servers: localhost:9092,localhost:9094,localhost:9096
     consumer:
-      group-id: movies-service
       key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
       value-deserializer: org.springframework.kafka.support.serializer.JsonDeserializer
       auto-offset-reset: earliest
@@ -58,3 +57,5 @@ booking:
     topic-movie-responses: movies.response
     topic-bookings: bookings.events
     dlq: bookings.events.dlq
+    group-bookings:        movies-service-bookings
+    group-movie-requests:  movies-service-requests

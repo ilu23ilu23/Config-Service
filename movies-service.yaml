@@ -54,5 +54,7 @@ server:
 
 booking:
   kafka:
-    topic: bookings.events
-    dlq:   bookings.events.dlq
+    topic-movie-requests: movies.request
+    topic-movie-responses: movies.response
+    topic-bookings: bookings.events
+    dlq: bookings.events.dlq

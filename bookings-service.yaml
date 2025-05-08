@@ -31,7 +31,9 @@ spring:
 
 booking:
   kafka:
-    topic: bookings.events
+    topic-bookings: bookings.events
+    topic-movie-requests: movies.request
+    topic-movie-responses: movies.response
 
 resilience4j:
   circuitbreaker:

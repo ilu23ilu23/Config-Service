@@ -36,7 +36,7 @@ spring:
         spring.deserializer.value.delegate.class: org.springframework.kafka.support.serializer.JsonDeserializer
         spring.json.trusted.packages: com.example.bookings.*
         spring.json.value.default.type: com.example.bookings.event.BookingEvent
-        spring.json.ignore.type.headers: true
+        spring.json.use.type.headers: false
     producer:
       key-serializer: org.apache.kafka.common.serialization.StringSerializer
       value-serializer: org.springframework.kafka.support.serializer.JsonSerializer

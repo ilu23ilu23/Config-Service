@@ -76,5 +76,6 @@ logging:
   level:
     org.springframework.boot.autoconfigure.web: DEBUG
     org.springframework.security.access: DEBUG 
-    org.springframework.transaction: TRACE
-    org.springframework.transaction.interceptor: TRACE
+    org.springframework.data.transaction: TRACE
+    org.springframework.orm.jpa.JpaTransactionManager: DEBUG
+    org.springframework.kafka.transaction: DEBUG
